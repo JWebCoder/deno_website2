@@ -8,7 +8,6 @@ import {
   getTableOfContents,
   getFileURL,
   getDocURL,
-  scrollTOCIntoView,
 } from "../util/manual_utils";
 import Markdown from "./Markdown";
 import Transition from "./Transition";
@@ -47,12 +46,6 @@ function Manual() {
 
   Router.events.on("routeChangeStart", () => setShowSidebar(false));
 
-  useEffect(() => {
-    if (showSidebar) {
-      scrollTOCIntoView();
-    }
-  }, [showSidebar]);
-
   const [
     tableOfContents,
     setTableOfContents,
@@ -64,7 +57,13 @@ function Manual() {
   useEffect(() => {
     getTableOfContents(version ?? "master")
       .then(setTableOfContents)
-      .then(scrollTOCIntoView)
+      .then(() =>
+        setTimeout(
+          () =>
+            document.getElementsByClassName("toc-active")[0].scrollIntoView(),
+          0
+        )
+      )
       .catch((e) => {
         console.error("Failed to fetch table of contents:", e);
         setTableOfContents(null);
