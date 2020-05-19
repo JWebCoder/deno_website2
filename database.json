@@ -537,12 +537,6 @@
     "repo": "denomander",
     "desc": "Deno command-line interfaces inspired from commander.js"
   },
-  "denomon": {
-    "type": "github",
-    "owner": "remy",
-    "repo": "denomon",
-    "desc": "Reload automatically. A port of nodemon"
-  },
   "denon": {
     "type": "github",
     "owner": "eliassjogreen",
