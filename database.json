@@ -912,12 +912,6 @@
     "repo": "deno-json-rpc",
     "desc": "JSON-RPC interface"
   },
-  "json_server": {
-    "type": "github",
-    "owner": "magnattic",
-    "repo": "json-server",
-    "desc": "Zero code fake backend for development"
-  },
   "jszip": {
     "type": "github",
     "owner": "hayd",
